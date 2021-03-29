@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import ac1.poo.ac1poo.dto.EventDTO;
@@ -13,11 +15,13 @@ import ac1.poo.ac1poo.repository.EventRepository;
 @Service
 public class EventService {
     @Autowired
-    private EventRepository eventRepository;
-    public EventDTO save(EventInsertDTO insertDTO){
-        Event evento = new Event(insertDTO);
-        evento = eventRepository.save(evento);
-        return new EventDTO(evento);
+    private EventRepository repo;
+
+    public Page<EventDTO> getClients(PageRequest pageRequest) {
+        
+        Page<Event> list = repo.find(pageRequest);
+
+        return list.map( c -> new EventDTO(c));
     }
 
     public List<EventDTO> getEvent() {
