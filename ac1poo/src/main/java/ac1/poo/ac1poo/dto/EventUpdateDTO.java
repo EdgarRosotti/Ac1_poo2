@@ -1,19 +1,22 @@
 package ac1.poo.ac1poo.dto;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class EventUpdateDTO {
-    private String dataInicial;
-    private String horarioInicial;
+    private LocalDate dataInicial;
+    private LocalTime horarioInicial;
     private String email;
-    public String getDataInicial() {
+    public LocalDate getDataInicial() {
         return dataInicial;
     }
-    public void setDataInicial(String dataInicial) {
+    public void setDataInicial(LocalDate dataInicial) {
         this.dataInicial = dataInicial;
     }
-    public String getHorarioInicial() {
+    public LocalTime getHorarioInicial() {
         return horarioInicial;
     }
-    public void setHorarioInicial(String horarioInicial) {
+    public void setHorarioInicial(LocalTime horarioInicial) {
         this.horarioInicial = horarioInicial;
     }
     public String getEmail() {

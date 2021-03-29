@@ -3,6 +3,8 @@ package ac1.poo.ac1poo.servicie;
 
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import ac1.poo.ac1poo.dto.EventDTO;
+import ac1.poo.ac1poo.dto.EventUpdateDTO;
 import ac1.poo.ac1poo.entities.Event;
 import ac1.poo.ac1poo.repository.EventRepository;
 @Service
@@ -38,6 +41,21 @@ public class EventService {
         } catch (EmptyResultDataAccessException e) {
             throw
              new ResponseStatusException(HttpStatus.NOT_FOUND, "Event not found");
+        }
+    }
+
+    public EventDTO update(Long id, EventUpdateDTO updateDTO) {
+        try {
+            Event entity = repo.getOne(id);
+            entity.setDataInicial(updateDTO.getDataInicial());
+            entity.setHorarioInicial(updateDTO.getHorarioInicial());
+            entity.setEmail(updateDTO.getEmail());
+
+            entity = repo.save(entity);
+
+            return new EventDTO(entity);
+        } catch (EntityNotFoundException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Client not found");
         }
     }
 
