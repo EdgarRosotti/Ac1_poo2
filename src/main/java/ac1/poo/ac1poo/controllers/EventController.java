@@ -23,8 +23,8 @@ import ac1.poo.ac1poo.dto.EventDTO;
 import ac1.poo.ac1poo.dto.EventInsertDTO;
 import ac1.poo.ac1poo.dto.EventUpdateDTO;
 import ac1.poo.ac1poo.servicie.EventService;
-@RequestMapping ("/events")
 @RestController
+@RequestMapping ("/events")
 public class EventController {
     @Autowired
     private EventService eventService;
@@ -38,7 +38,7 @@ public class EventController {
         @RequestParam(value = "orderBy",      defaultValue = "id") String orderBy,
         @RequestParam(value = "nome",         defaultValue = "") String nome,
         @RequestParam(value = "local",      defaultValue = "") String local,
-        @RequestParam(value = "inicio",      defaultValue = "") LocalDate dataInicial,
+        @RequestParam(value = "dataInicial",      defaultValue = "01/01/1500") LocalDate dataInicial,
         @RequestParam(value = "descricao",      defaultValue = "") String descricao
 
     ){
