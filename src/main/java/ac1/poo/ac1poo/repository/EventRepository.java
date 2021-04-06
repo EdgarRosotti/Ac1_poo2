@@ -14,9 +14,9 @@ import ac1.poo.ac1poo.entities.Event;
 @Repository
 public interface EventRepository extends JpaRepository<Event,Long> {
     @Query("SELECT c FROM Event c WHERE " +
-    "UPPER(c.nome) LIKE UPPER(CONCAT('%', :nome, '%')) AND"+
-    "UPPER(c.local) LIKE UPPER(CONCAT( '%', :local, '%')) AND"+
-    "UPPER(c.descricao) LIKE UPPER(CONCAT( '%', :descricao, '%')) AND"+
+    "UPPER(c.nome) LIKE UPPER(CONCAT('%', :nome, '%')) AND "+
+    "UPPER(c.local) LIKE UPPER(CONCAT( '%', :local, '%')) AND "+
+    "UPPER(c.descricao) LIKE UPPER(CONCAT( '%', :descricao, '%')) AND "+
     "c.dataInicial > TO_DATE(:dataInicial, 'DD/MM/YYYY')")
     public Page<Event> find(Pageable pageRequest, String nome, String local, LocalDate dataInicial, String descricao);
     
