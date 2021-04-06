@@ -61,6 +61,7 @@ public class EventDTO {
     public void setHorarioInicial(LocalTime horarioInicial) {
         this.horarioInicial = horarioInicial;
     }
+
   
 
 }

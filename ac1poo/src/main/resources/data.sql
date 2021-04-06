@@ -1,0 +1,1 @@
+INSERT INTO tb_event (nome,descricao,local,data_inicial, data_final,horario_inicial,horario_final,email) VALUES ('Edgar','Show','Av 9 de Julho','2021-04-05','2021-04-05','14:00:00','22:00:00','edgar@gamail.com');

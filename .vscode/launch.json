@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Ac1pooApplication<ac1poo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "ac1.poo.ac1poo.Ac1pooApplication",
+            "projectName": "ac1poo",
+            "args": ""
+        }
+    ]
+}

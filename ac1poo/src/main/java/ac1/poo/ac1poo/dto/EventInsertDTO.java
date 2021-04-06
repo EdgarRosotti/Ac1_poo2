@@ -1,15 +1,16 @@
 package ac1.poo.ac1poo.dto;
 
-
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class EventInsertDTO {
     private String nome;
     private String descricao;
     private String local;
-    private String dataFinal;
-    private String dataInicial;
-    private String horarioInicial;
-    private String horarioFinal;
+    private LocalDate dataFinal;
+    private LocalDate dataInicial;
+    private LocalTime horarioInicial;
+    private LocalTime horarioFinal;
     private String email;
     public String getNome() {
         return nome;
@@ -29,28 +30,28 @@ public class EventInsertDTO {
     public void setLocal(String local) {
         this.local = local;
     }
-    public String getDataFinal() {
+    public LocalDate getDataFinal() {
         return dataFinal;
     }
-    public void setDataFinal(String dataFinal) {
+    public void setDataFinal(LocalDate dataFinal) {
         this.dataFinal = dataFinal;
     }
-    public String getDataInicial() {
+    public LocalDate getDataInicial() {
         return dataInicial;
     }
-    public void setDataInicial(String dataInicial) {
+    public void setDataInicial(LocalDate dataInicial) {
         this.dataInicial = dataInicial;
     }
-    public String getHorarioInicial() {
+    public LocalTime getHorarioInicial() {
         return horarioInicial;
     }
-    public void setHorarioInicial(String horarioInicial) {
+    public void setHorarioInicial(LocalTime horarioInicial) {
         this.horarioInicial = horarioInicial;
     }
-    public String getHorarioFinal() {
+    public LocalTime getHorarioFinal() {
         return horarioFinal;
     }
-    public void setHorarioFinal(String horarioFinal) {
+    public void setHorarioFinal(LocalTime horarioFinal) {
         this.horarioFinal = horarioFinal;
     }
     public String getEmail() {
@@ -59,4 +60,5 @@ public class EventInsertDTO {
     public void setEmail(String email) {
         this.email = email;
     }
+ 
 }

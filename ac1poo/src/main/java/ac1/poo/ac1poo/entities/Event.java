@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import ac1.poo.ac1poo.dto.EventInsertDTO;
+
 @Entity
 @Table(name = "TB_EVENT")
 public class Event implements Serializable{
@@ -28,6 +30,18 @@ public class Event implements Serializable{
     private LocalTime horarioInicial;
     private LocalTime horarioFinal;
     private String email;
+    public Event() {
+    }
+    public Event(EventInsertDTO insertDTO) {
+        this.nome = insertDTO.getNome();
+        this.descricao = insertDTO.getDescricao();
+        this.local = insertDTO.getLocal();
+        this.dataFinal = insertDTO.getDataFinal();
+        this.dataInicial = insertDTO.getDataInicial();
+        this.horarioInicial = insertDTO.getHorarioInicial();
+        this.horarioFinal = insertDTO.getHorarioFinal();
+        this.email = insertDTO.getEmail();
+    }
     public static long getSerialversionuid() {
         return serialVersionUID;
     }
